@@ -27,11 +27,14 @@ namespace E_Migrant.App.FrontEnd
             services.AddRazorPages(
                 options =>{
                     options.Conventions.AuthorizeFolder("/Migrante");
+                    options.Conventions.AuthorizeFolder("/Empresa");
                     options.Conventions.AuthorizePage("/Index");
                     }
             );
             Persistencia.AppContext _contexto = new Persistencia.AppContext();
             services.AddSingleton<IRepositorioMigrante>(new RepositorioMigrante(_contexto));
+            services.AddSingleton<IRepositorioEmpresa>(new RepositorioEmpresa(_contexto));
+            services.AddSingleton<IRepositorioAmigo>(new RepositorioAmigo(_contexto));
            
             services.AddControllersWithViews();
         }
