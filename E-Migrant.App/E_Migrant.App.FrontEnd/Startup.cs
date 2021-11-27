@@ -24,7 +24,12 @@ namespace E_Migrant.App.FrontEnd
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddRazorPages(
+                options =>{
+                    options.Conventions.AuthorizeFolder("/Migrante");
+                    options.Conventions.AuthorizePage("/Index");
+                    }
+            );
             Persistencia.AppContext _contexto = new Persistencia.AppContext();
             services.AddSingleton<IRepositorioMigrante>(new RepositorioMigrante(_contexto));
            
@@ -50,10 +55,15 @@ namespace E_Migrant.App.FrontEnd
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name:"default",
+                    pattern:"{controller=Conference}/{action=Index}/{id?}"
+                );
                 endpoints.MapRazorPages();
             });
         }

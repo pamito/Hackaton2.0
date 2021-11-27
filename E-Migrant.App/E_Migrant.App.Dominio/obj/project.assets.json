@@ -722,19 +722,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Pablo Mayorga\\.nuget\\packages\\": {}
+    "C:\\Users\\tec_miguelc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pablo Mayorga\\Documents\\mision tic\\ciclo 4\\programacion\\Hackaton\\E-Migrant\\E-Migrant.App\\E_Migrant.App.Dominio\\E_Migrant.App.Dominio.csproj",
+      "projectUniqueName": "C:\\Hackaton2.0\\E-Migrant.App\\E_Migrant.App.Dominio\\E_Migrant.App.Dominio.csproj",
       "projectName": "E_Migrant.App.Dominio",
-      "projectPath": "C:\\Users\\Pablo Mayorga\\Documents\\mision tic\\ciclo 4\\programacion\\Hackaton\\E-Migrant\\E-Migrant.App\\E_Migrant.App.Dominio\\E_Migrant.App.Dominio.csproj",
-      "packagesPath": "C:\\Users\\Pablo Mayorga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pablo Mayorga\\Documents\\mision tic\\ciclo 4\\programacion\\Hackaton\\E-Migrant\\E-Migrant.App\\E_Migrant.App.Dominio\\obj\\",
+      "projectPath": "C:\\Hackaton2.0\\E-Migrant.App\\E_Migrant.App.Dominio\\E_Migrant.App.Dominio.csproj",
+      "packagesPath": "C:\\Users\\tec_miguelc\\.nuget\\packages\\",
+      "outputPath": "C:\\Hackaton2.0\\E-Migrant.App\\E_Migrant.App.Dominio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Pablo Mayorga\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\tec_miguelc\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
