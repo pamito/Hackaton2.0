@@ -31,6 +31,7 @@ namespace E_Migrant.App.FrontEnd
                     options.Conventions.AuthorizePage("/Index");
                     options.Conventions.AuthorizeFolder("/Nesecidad");
                     options.Conventions.AuthorizeFolder("/Servicio");
+                    options.Conventions.AuthorizeFolder("/Amigo");
                     }
             );
             Persistencia.AppContext _contexto = new Persistencia.AppContext();
