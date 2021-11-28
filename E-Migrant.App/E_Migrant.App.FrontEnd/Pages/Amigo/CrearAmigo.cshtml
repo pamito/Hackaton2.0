@@ -1,0 +1,34 @@
+﻿@page
+@model E_Migrant.App.FrontEnd.CrearAmigoModel
+@using E_Migrant.App.Dominio
+@{
+}
+<div class = "center">
+<h3>Agregar Amigo</h3>
+<form method="post" >
+    <div class="form-row">
+	
+        <div class="form-group col-md-6">
+             <label asp-for="Id" class="col-sm-2">Usuario</label>
+            <select asp-for="Id" class="form-control" asp-items="Model.migrantes"></select>
+        </div>
+
+        <div class="form-group col-md-6">
+        <label asp-for="amigo.AmigoOFamiliar" class="col-sm-2">Amigo O Familiar</label>
+        <select asp-for="amigo.AmigoOFamiliar" class="form-control" asp-items="Html.GetEnumSelectList<AmigoOFamiliar>()"></select> 
+        <span class="text-danger" asp-validation-for="amigo.AmigoOFamiliar"></span>      
+	    </div>
+
+        <div class="form-group col-md-6">
+             <label asp-for="IdA" class="col-sm-2">Amigo</label>
+            <select asp-for="IdA" class="form-control" asp-items="Model.migrantes"></select>
+        </div>
+        
+        
+	
+    <div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a asp-page="./ListarAmigos" class="btn btn-primary">Cancelar</a>
+    </div>
+</form>
+</div>

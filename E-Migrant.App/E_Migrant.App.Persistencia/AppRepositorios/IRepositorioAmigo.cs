@@ -12,7 +12,7 @@ namespace E_Migrant.App.Persistencia
         //Editar Amigo
         Amigo editAmigo(Amigo Amigo);
         //Eliminar Amigo
-        void removeAmigo(string Name);
+        void removeAmigo(int Id);
 
         Amigo getAmigo(int Id);
     }

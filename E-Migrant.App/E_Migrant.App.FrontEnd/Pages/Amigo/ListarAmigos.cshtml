@@ -1,0 +1,32 @@
+﻿@page
+@model E_Migrant.App.FrontEnd.ListarAmigosModel
+@using E_Migrant.App.Dominio
+@{
+}
+<div class = "center">
+<h3>Lista de Amigos</h3>
+<P>En esta pagina podras Gestionar los Amigos o Familiares</P>
+
+	<table class="table table-dark" >
+	  <thead class="thead-dark">
+		<tr>
+		  <th scope="col">Nombre</th>
+		  <th scope="col">Amigo</th>
+		  <th scope="col">Amigo o Familiar</th>
+		</tr>
+	  </thead>
+
+		@foreach(var amigo in Model.amigos) {
+		<tr>
+			<td><b><a style="color:#FFC300" asp-page="./ListarAmigos" asp-route-id="@amigo.Id">@amigo.Migrante.Nombre</a></b></td>
+				
+			<td>@amigo.MigranteA.Nombre</td>
+			<td>@amigo.AmigoOFamiliar</td>
+			
+			<td><a class="btn btn-primary table-btn" asp-page="./ActualizarAmigo" asp-route-id="@amigo.Id">Editar</a></td>
+            <td><a class="btn btn-primary table-btn" asp-page="./EliminarAmigo" asp-route-id="@amigo.Id">Eliminar</a></td>
+			  
+		</tr>
+	}
+	</table>
+</div>

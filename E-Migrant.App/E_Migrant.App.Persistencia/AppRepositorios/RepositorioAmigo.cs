@@ -23,13 +23,15 @@ namespace E_Migrant.App.Persistencia
 
         public Amigo editAmigo(Amigo amigo)
         {
-            Amigo AmigoAEditar = _contexto.Amigos.FirstOrDefault(c=> c.Id == amigo.Id);
+            Amigo AmigoAEditar = _contexto.Amigos.Include("Migrante").FirstOrDefault(c=> c.Id == amigo.Id);
             if(AmigoAEditar != null)
             {
-                AmigoAEditar.Name= amigo.Name;
-                
+                AmigoAEditar.Migrante= amigo.Migrante;
+                               
                 AmigoAEditar.AmigoOFamiliar = amigo.AmigoOFamiliar;
                 _contexto.SaveChanges();
+
+                AmigoAEditar.MigranteA= amigo.MigranteA;
 
             }
             return AmigoAEditar;
@@ -37,19 +39,20 @@ namespace E_Migrant.App.Persistencia
 
         public IEnumerable<Amigo> getAllAmigo()
         {
-           return _contexto.Amigos;
+           return _contexto.Amigos.Include("Migrante");
         }
 
 
         public Amigo getAmigo(int Id)
         {
-            return _contexto.Amigos.FirstOrDefault(x=> x.Id == Id);
+             Amigo Amigo = _contexto.Amigos.Include("Migrante").FirstOrDefault(x => x.Id == Id);
+             return Amigo;
         }
 
-        public void removeAmigo(string Name)
+        public void removeAmigo(int Id)
         {
          
-            Amigo amigo = _contexto.Amigos.FirstOrDefault(c => c.Name == Name);
+            Amigo amigo = _contexto.Amigos.FirstOrDefault(c => c.Id == Id);
             if(amigo != null){
                 _contexto.Amigos.Remove(amigo);
                 _contexto.SaveChanges();
