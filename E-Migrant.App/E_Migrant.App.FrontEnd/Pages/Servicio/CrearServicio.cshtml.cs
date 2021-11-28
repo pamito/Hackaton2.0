@@ -13,21 +13,21 @@ namespace E_Migrant.App.FrontEnd
     public class CrearServicioModel : PageModel
     {
         private readonly IRepositorioServicio repositorioServicio;
-        private readonly IRepositorioNesecidad repositorioNesecidad;
+        private readonly IRepositorioEmpresa repositorioEmpresa;
         public Servicio servicio { get; set; }
-        public List<SelectListItem> nesecidades { get; set; }
+        public List<SelectListItem> empresas { get; set; }
 
         public int Id { get; set; }
 
-        public CrearServicioModel(IRepositorioServicio repositorioServicio, IRepositorioNesecidad repositorioNesecidad)
+        public CrearServicioModel(IRepositorioServicio repositorioServicio, IRepositorioEmpresa repositorioEmpresa)
         {
             this.repositorioServicio = repositorioServicio;
-            this.repositorioNesecidad = repositorioNesecidad;
+            this.repositorioEmpresa = repositorioEmpresa;
             servicio = new Servicio();
-            nesecidades = repositorioNesecidad.getAllNesecidades().Select(
+            empresas = repositorioEmpresa.getAllEmpresa().Select(
                 c => new SelectListItem
                 {
-                    Text = c.Descripcion,
+                    Text = c.Razon_Social,
                     Value = Convert.ToString(c.Id)
                 }
             ).ToList();
@@ -43,9 +43,9 @@ namespace E_Migrant.App.FrontEnd
             {
                 try
                 {
-                    Nesecidad nesecidad = repositorioNesecidad.getNesecidad(Id);
+                    Empresa empresa = repositorioEmpresa.getEmpresa(Id);
 
-                    servicio.Nesecidad = nesecidad;
+                    servicio.Empresa = empresa;
                     repositorioServicio.addServicio(servicio);
                     
                     return RedirectToPage("./ListarServicio");

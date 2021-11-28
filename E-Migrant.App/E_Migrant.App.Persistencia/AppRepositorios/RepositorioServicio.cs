@@ -23,7 +23,7 @@ namespace E_Migrant.App.Persistencia
 
         public Servicio editServicio(Servicio servicio)
         {
-            Servicio ServicioAEditar = _contexto.Servicios.FirstOrDefault(c=> c.Id == servicio.Id);
+            Servicio ServicioAEditar = _contexto.Servicios.Include("Empresa").FirstOrDefault(c=> c.Id == servicio.Id);
             if(ServicioAEditar != null)
             {
                 ServicioAEditar.Nombre_Servicio= servicio.Nombre_Servicio;
@@ -32,6 +32,7 @@ namespace E_Migrant.App.Persistencia
                 ServicioAEditar.Fecha_FinalOfer = servicio.Fecha_FinalOfer;
                 ServicioAEditar.EstadoServicio = servicio.EstadoServicio;
                 ServicioAEditar.Categoria_Nesecidades = servicio.Categoria_Nesecidades;
+                ServicioAEditar.Empresa = servicio.Empresa;
                 
                 _contexto.SaveChanges();
 
@@ -41,13 +42,14 @@ namespace E_Migrant.App.Persistencia
 
         public IEnumerable<Servicio> getAllServicio()
         {
-           return _contexto.Servicios;
+           return _contexto.Servicios.Include("Empresa");
         }
 
 
         public Servicio getServicio(int Id)
         {
-            return _contexto.Servicios.FirstOrDefault(x=> x.Id == Id);
+            Servicio Servicio = _contexto.Servicios.Include("Empresa").FirstOrDefault(x => x.Id == Id);
+            return Servicio;
         }
 
         public void removeServicio(string Nombre_Servicio)

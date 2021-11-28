@@ -27,6 +27,8 @@ namespace E_Migrant.App.Dominio
 
         public Nesecidad Nesecidad { get; set; }
 
+        public Empresa Empresa { get; set; }
+
  }
 
 }

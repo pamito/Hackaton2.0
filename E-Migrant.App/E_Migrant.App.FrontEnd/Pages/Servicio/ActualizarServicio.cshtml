@@ -43,7 +43,11 @@
             <select asp-for="servicio.Categoria_Nesecidades" class="form-control" asp-items="Html.GetEnumSelectList<Categoria_Nesecidades>()"></select> 
             <span class="text-danger" asp-validation-for="servicio.Categoria_Nesecidades"></span>      
         </div>
-            
+        
+        <div class="form-group col-md-6">
+            <label asp-for="Id" class="col-sm-2">Empresa</label>
+            <select asp-for="Id" class="form-control" asp-items="Model.empresas"></select>
+        </div>
 
         
 	</div>

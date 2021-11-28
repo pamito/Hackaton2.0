@@ -17,6 +17,7 @@
 		  <th scope="col">Fecha Finalizacion</th>
 		  <th scope="col">Estado del Sevicio</th>
           <th scope="col">Categoria Nesecidade</th>
+		  <th scope="col">Empresa</th>
 		 
 
 		</tr>
@@ -30,6 +31,7 @@
 			<td>@servicio.Fecha_FinalOfer</td>
 			<td>@servicio.EstadoServicio</td>
             <td>@servicio.Categoria_Nesecidades</td>
+			<td>@servicio.Empresa.Razon_Social</td>
 			<td><a class="btn btn-primary table-btn" asp-page="./ActualizarServicio" asp-route-id="@servicio.Id">Editar</a></td>
 			  
 		</tr>

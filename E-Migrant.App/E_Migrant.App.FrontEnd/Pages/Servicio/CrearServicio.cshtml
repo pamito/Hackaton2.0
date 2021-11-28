@@ -7,7 +7,6 @@
 <h3>Cargar Servico a Nesecidad</h3>
 <form method="post" >
     <div class="form-row">
-
 	
         <div class="form-group col-md-6">
             <label asp-for="servicio.Nombre_Servicio" class="col-sm-2">Nombre_Servicio</label>
@@ -43,10 +42,13 @@
             <span class="text-danger" asp-validation-for="servicio.Categoria_Nesecidades"></span>      
         </div>
             
-
-        
+        <div class="form-group col-md-6">
+             <label asp-for="Id" class="col-sm-2">Empresa</label>
+            <select asp-for="Id" class="form-control" asp-items="Model.empresas"></select>
+        </div>
 	</div>
-
+        
+	
     <div>
         <button type="submit" class="btn btn-primary">Guardar</button>
         <a asp-page="./ListarServicio" class="btn btn-primary">Cancelar</a>
