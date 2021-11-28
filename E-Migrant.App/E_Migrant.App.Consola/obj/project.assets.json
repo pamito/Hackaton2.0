@@ -5799,19 +5799,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tec_miguelc\\.nuget\\packages\\": {}
+    "C:\\Users\\Pablo Mayorga\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Hackaton2.0\\E-Migrant.App\\E_Migrant.App.Consola\\E_Migrant.App.Consola.csproj",
+      "projectUniqueName": "C:\\Users\\Pablo Mayorga\\Documents\\mision tic\\ciclo 4\\programacion\\Hackaton\\Hackaton2.0\\E-Migrant.App\\E_Migrant.App.Consola\\E_Migrant.App.Consola.csproj",
       "projectName": "E_Migrant.App.Consola",
-      "projectPath": "C:\\Hackaton2.0\\E-Migrant.App\\E_Migrant.App.Consola\\E_Migrant.App.Consola.csproj",
-      "packagesPath": "C:\\Users\\tec_miguelc\\.nuget\\packages\\",
-      "outputPath": "C:\\Hackaton2.0\\E-Migrant.App\\E_Migrant.App.Consola\\obj\\",
+      "projectPath": "C:\\Users\\Pablo Mayorga\\Documents\\mision tic\\ciclo 4\\programacion\\Hackaton\\Hackaton2.0\\E-Migrant.App\\E_Migrant.App.Consola\\E_Migrant.App.Consola.csproj",
+      "packagesPath": "C:\\Users\\Pablo Mayorga\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Pablo Mayorga\\Documents\\mision tic\\ciclo 4\\programacion\\Hackaton\\Hackaton2.0\\E-Migrant.App\\E_Migrant.App.Consola\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\tec_miguelc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Pablo Mayorga\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5823,11 +5823,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Hackaton2.0\\E-Migrant.App\\E_Migrant.App.Dominio\\E_Migrant.App.Dominio.csproj": {
-              "projectPath": "C:\\Hackaton2.0\\E-Migrant.App\\E_Migrant.App.Dominio\\E_Migrant.App.Dominio.csproj"
+            "C:\\Users\\Pablo Mayorga\\Documents\\mision tic\\ciclo 4\\programacion\\Hackaton\\Hackaton2.0\\E-Migrant.App\\E_Migrant.App.Dominio\\E_Migrant.App.Dominio.csproj": {
+              "projectPath": "C:\\Users\\Pablo Mayorga\\Documents\\mision tic\\ciclo 4\\programacion\\Hackaton\\Hackaton2.0\\E-Migrant.App\\E_Migrant.App.Dominio\\E_Migrant.App.Dominio.csproj"
             },
-            "C:\\Hackaton2.0\\E-Migrant.App\\E_Migrant.App.Persistencia\\E_Migrant.App.Persistencia.csproj": {
-              "projectPath": "C:\\Hackaton2.0\\E-Migrant.App\\E_Migrant.App.Persistencia\\E_Migrant.App.Persistencia.csproj"
+            "C:\\Users\\Pablo Mayorga\\Documents\\mision tic\\ciclo 4\\programacion\\Hackaton\\Hackaton2.0\\E-Migrant.App\\E_Migrant.App.Persistencia\\E_Migrant.App.Persistencia.csproj": {
+              "projectPath": "C:\\Users\\Pablo Mayorga\\Documents\\mision tic\\ciclo 4\\programacion\\Hackaton\\Hackaton2.0\\E-Migrant.App\\E_Migrant.App.Persistencia\\E_Migrant.App.Persistencia.csproj"
             }
           }
         }

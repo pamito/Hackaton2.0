@@ -19,6 +19,100 @@ namespace E_Migrant.App.Persistencia.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
+            modelBuilder.Entity("E_Migrant.App.Dominio.Amigo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("AmigoOFamiliar")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MigranteId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MigranteId");
+
+                    b.ToTable("Amigos");
+                });
+
+            modelBuilder.Entity("E_Migrant.App.Dominio.Empresa", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Ciudad")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Direccion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nit")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pagina_Web")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Razon_Social")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Sector")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Telefono")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Tipo_Servicios")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Empresas");
+                });
+
+            modelBuilder.Entity("E_Migrant.App.Dominio.Nesecidad", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("Categoria_Nesecidades")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("MigranteId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NivelP")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MigranteId");
+
+                    b.ToTable("Nesecidades");
+                });
+
             modelBuilder.Entity("E_Migrant.App.Dominio.Persona", b =>
                 {
                     b.Property<int>("Id")
@@ -67,6 +161,42 @@ namespace E_Migrant.App.Persistencia.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("Persona");
                 });
 
+            modelBuilder.Entity("E_Migrant.App.Dominio.Servicio", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("Categoria_Nesecidades")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EstadoServicio")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Fecha_FinalOfer")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Fecha_InicioOfer")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Max_Migrante")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("NesecidadId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombre_Servicio")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NesecidadId");
+
+                    b.ToTable("Servicios");
+                });
+
             modelBuilder.Entity("E_Migrant.App.Dominio.Migrante", b =>
                 {
                     b.HasBaseType("E_Migrant.App.Dominio.Persona");
@@ -78,6 +208,33 @@ namespace E_Migrant.App.Persistencia.Migrations
                         .HasColumnType("int");
 
                     b.HasDiscriminator().HasValue("Migrante");
+                });
+
+            modelBuilder.Entity("E_Migrant.App.Dominio.Amigo", b =>
+                {
+                    b.HasOne("E_Migrant.App.Dominio.Migrante", "Migrante")
+                        .WithMany()
+                        .HasForeignKey("MigranteId");
+
+                    b.Navigation("Migrante");
+                });
+
+            modelBuilder.Entity("E_Migrant.App.Dominio.Nesecidad", b =>
+                {
+                    b.HasOne("E_Migrant.App.Dominio.Migrante", "Migrante")
+                        .WithMany()
+                        .HasForeignKey("MigranteId");
+
+                    b.Navigation("Migrante");
+                });
+
+            modelBuilder.Entity("E_Migrant.App.Dominio.Servicio", b =>
+                {
+                    b.HasOne("E_Migrant.App.Dominio.Nesecidad", "Nesecidad")
+                        .WithMany()
+                        .HasForeignKey("NesecidadId");
+
+                    b.Navigation("Nesecidad");
                 });
 #pragma warning restore 612, 618
         }
