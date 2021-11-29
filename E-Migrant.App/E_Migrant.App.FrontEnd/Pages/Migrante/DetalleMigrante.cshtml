@@ -1,0 +1,20 @@
+﻿@page
+@model E_Migrant.App.FrontEnd.DetalleMigranteModel
+@{
+}
+<h3>Detalle del Auxiliar @Model.migrante.Nombre</h3>
+<p>
+<p>
+        <br>
+        <br> 
+        <li>Nombre:  @Model.migrante.Nombre</li><br>
+        <li>Identificacion:  @Model.migrante.Apellidos</li><br>
+        <li>Telefono:  @Model.migrante.Fecha_nacimiento</li><br>
+        <li>Direccion:  @Model.migrante.Direccion</li><br>
+        <li>Email:  @Model.migrante.Email</li><br>
+        <li>Contrasena:  @Model.migrante.Telefono</li><br>
+        <li>Ciudad:  @Model.migrante.Ciudad</li><br>
+        <li>Pais:  @Model.migrante.Pais</li><br>
+        
+    <br><br>
+<a asp-page="../Amigo/ListarAmigos" class="btn btn-primary">Volver</a>

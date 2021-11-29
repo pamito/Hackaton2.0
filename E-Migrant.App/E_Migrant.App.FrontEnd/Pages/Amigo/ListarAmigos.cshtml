@@ -19,8 +19,9 @@
 		@foreach(var amigo in Model.amigos) {
 		<tr>
 			<td><b><a style="color:#FFC300" asp-page="./ListarAmigos" asp-route-id="@amigo.Id">@amigo.Migrante.Nombre</a></b></td>
+			<td><b><a style="color:#FFC300" asp-page="../Migrante/DetalleMigrante" asp-route-id="@amigo.MigranteA.Id">@amigo.MigranteA.Nombre</a></b></td>
 				
-			<td>@amigo.MigranteA.Nombre</td>
+			
 			<td>@amigo.AmigoOFamiliar</td>
 			
 			<td><a class="btn btn-primary table-btn" asp-page="./ActualizarAmigo" asp-route-id="@amigo.Id">Editar</a></td>

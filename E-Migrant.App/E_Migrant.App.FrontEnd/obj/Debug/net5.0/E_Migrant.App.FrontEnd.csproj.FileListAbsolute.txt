@@ -412,3 +412,8 @@ C:\Users\Pablo Mayorga\Documents\mision tic\ciclo 4\programacion\Hackaton\Hackat
 C:\Users\Pablo Mayorga\Documents\mision tic\ciclo 4\programacion\Hackaton\Hackaton2.0\E-Migrant.App\E_Migrant.App.FrontEnd\obj\Debug\net5.0\Razor\Pages\Servicio\ListarServicio.cshtml.g.cs
 C:\Users\Pablo Mayorga\Documents\mision tic\ciclo 4\programacion\Hackaton\Hackaton2.0\E-Migrant.App\E_Migrant.App.FrontEnd\obj\Debug\net5.0\Razor\Pages\Servicio\CrearServicio.cshtml.g.cs
 C:\Users\Pablo Mayorga\Documents\mision tic\ciclo 4\programacion\Hackaton\Hackaton2.0\E-Migrant.App\E_Migrant.App.FrontEnd\obj\Debug\net5.0\Razor\Pages\Servicio\ActualizarServicio.cshtml.g.cs
+C:\Users\Pablo Mayorga\Documents\mision tic\ciclo 4\programacion\Hackaton\Hackaton2.0\E-Migrant.App\E_Migrant.App.FrontEnd\obj\Debug\net5.0\Razor\Pages\Amigo\CrearAmigo.cshtml.g.cs
+C:\Users\Pablo Mayorga\Documents\mision tic\ciclo 4\programacion\Hackaton\Hackaton2.0\E-Migrant.App\E_Migrant.App.FrontEnd\obj\Debug\net5.0\Razor\Pages\Amigo\ListarAmigos.cshtml.g.cs
+C:\Users\Pablo Mayorga\Documents\mision tic\ciclo 4\programacion\Hackaton\Hackaton2.0\E-Migrant.App\E_Migrant.App.FrontEnd\obj\Debug\net5.0\Razor\Pages\Amigo\ActualizarAmigo.cshtml.g.cs
+C:\Users\Pablo Mayorga\Documents\mision tic\ciclo 4\programacion\Hackaton\Hackaton2.0\E-Migrant.App\E_Migrant.App.FrontEnd\obj\Debug\net5.0\Razor\Pages\Amigo\EliminarAmigo.cshtml.g.cs
+C:\Users\Pablo Mayorga\Documents\mision tic\ciclo 4\programacion\Hackaton\Hackaton2.0\E-Migrant.App\E_Migrant.App.FrontEnd\obj\Debug\net5.0\Razor\Pages\Migrante\DetalleMigrante.cshtml.g.cs

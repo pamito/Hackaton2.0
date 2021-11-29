@@ -29,13 +29,15 @@ namespace E_Migrant.App.Persistencia.Migrations
                     b.Property<int>("AmigoOFamiliar")
                         .HasColumnType("int");
 
+                    b.Property<int?>("MigranteAId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("MigranteId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("MigranteAId");
 
                     b.HasIndex("MigranteId");
 
@@ -171,6 +173,9 @@ namespace E_Migrant.App.Persistencia.Migrations
                     b.Property<int>("Categoria_Nesecidades")
                         .HasColumnType("int");
 
+                    b.Property<int?>("EmpresaId")
+                        .HasColumnType("int");
+
                     b.Property<int>("EstadoServicio")
                         .HasColumnType("int");
 
@@ -192,6 +197,8 @@ namespace E_Migrant.App.Persistencia.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("EmpresaId");
+
                     b.HasIndex("NesecidadId");
 
                     b.ToTable("Servicios");
@@ -212,11 +219,17 @@ namespace E_Migrant.App.Persistencia.Migrations
 
             modelBuilder.Entity("E_Migrant.App.Dominio.Amigo", b =>
                 {
+                    b.HasOne("E_Migrant.App.Dominio.Migrante", "MigranteA")
+                        .WithMany()
+                        .HasForeignKey("MigranteAId");
+
                     b.HasOne("E_Migrant.App.Dominio.Migrante", "Migrante")
                         .WithMany()
                         .HasForeignKey("MigranteId");
 
                     b.Navigation("Migrante");
+
+                    b.Navigation("MigranteA");
                 });
 
             modelBuilder.Entity("E_Migrant.App.Dominio.Nesecidad", b =>
@@ -230,9 +243,15 @@ namespace E_Migrant.App.Persistencia.Migrations
 
             modelBuilder.Entity("E_Migrant.App.Dominio.Servicio", b =>
                 {
+                    b.HasOne("E_Migrant.App.Dominio.Empresa", "Empresa")
+                        .WithMany()
+                        .HasForeignKey("EmpresaId");
+
                     b.HasOne("E_Migrant.App.Dominio.Nesecidad", "Nesecidad")
                         .WithMany()
                         .HasForeignKey("NesecidadId");
+
+                    b.Navigation("Empresa");
 
                     b.Navigation("Nesecidad");
                 });
